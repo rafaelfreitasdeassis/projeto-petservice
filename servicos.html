@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tabela de Preços Petshop</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f4f7ff, #dfefff);
+      padding: 30px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .titulo h1 {
+      font-size: 34px;
+      color: #2b2b2b;
+      margin-bottom: 10px;
+    }
+
+    .titulo p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .tabela-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #4a90e2;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    td {
+      padding: 16px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+      color: #444;
+      font-size: 15px;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fbff;
+    }
+
+    tr:hover {
+      background: #eef5ff;
+      transition: 0.3s;
+    }
+
+    .servico {
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    .preco {
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    .rodape {
+      margin-top: 25px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .titulo h1 {
+        font-size: 28px;
+      }
+
+      table {
+        min-width: 600px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="titulo">
+      <h1>🐾 Tabela de Preços</h1>
+      <p>Confira os valores dos serviços disponíveis no petshop</p>
+    </div>
+
+    <div class="tabela-container">
+
+      <table>
+
+        <tr>
+          <th>Serviço</th>
+          <th>Porte Pequeno</th>
+          <th>Porte Médio</th>
+          <th>Porte Grande</th>
+        </tr>
+
+        <tr>
+          <td class="servico">🛁 Banho</td>
+          <td class="preco">R$ 30,00</td>
+          <td class="preco">R$ 40,00</td>
+          <td class="preco">R$ 55,00</td>
+        </tr>
+
+        <tr>
+          <td class="servico">✂️ Banho e Tosa</td>
+          <td class="preco">R$ 45,00</td>
+          <td class="preco">R$ 60,00</td>
+          <td class="preco">R$ 80,00</td>
+        </tr>
+
+        <tr>
+          <td class="servico">🧼 Tosa Higiênica</td>
+          <td class="preco">R$ 25,00</td>
+          <td class="preco">R$ 35,00</td>
+          <td class="preco">R$ 50,00</td>
+        </tr>
+
+        <tr>
+          <td class="servico">🐶 Tosa Completa</td>
+          <td class="preco">R$ 40,00</td>
+          <td class="preco">R$ 55,00</td>
+          <td class="preco">R$ 75,00</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div class="rodape">
+      Valores sujeitos a alteração conforme o porte e condições do pet.
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+

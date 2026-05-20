@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+#conteudo-principal {
+    width: 90%;
+    max: width 1200px;
+    margin: 10px auto;
+
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.cartao {
+    background-color: bisque;
+}
+
+.cartao h3 {
+    margin-bottom: 8px;
+    color: rgb(40, 41, 65);
+}

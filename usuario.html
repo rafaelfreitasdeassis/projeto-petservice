@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sistema de Clientes</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f4f7ff, #dfefff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .titulo h1 {
+      font-size: 36px;
+      color: #2b2b2b;
+      margin-bottom: 10px;
+    }
+
+    .titulo p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .formulario {
+      margin-bottom: 40px;
+    }
+
+    .grupo {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #dcdcdc;
+      border-radius: 12px;
+      font-size: 15px;
+      background: #fafafa;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+      background: #fff;
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.15);
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-limpar {
+      background: #e5e5e5;
+      color: #333;
+    }
+
+    .btn-limpar:hover {
+      background: #d5d5d5;
+    }
+
+    .btn-cadastrar {
+      background: #4a90e2;
+      color: white;
+    }
+
+    .btn-cadastrar:hover {
+      background: #357abd;
+      transform: translateY(-2px);
+    }
+
+    .secao-tabela {
+      margin-top: 35px;
+    }
+
+    .secao-tabela h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2b2b2b;
+    }
+
+    .tabela-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #4a90e2;
+      color: white;
+      padding: 16px;
+      text-align: left;
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #ececec;
+      color: #444;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fbff;
+    }
+
+    tr:hover {
+      background: #eef5ff;
+    }
+
+    .acoes {
+      color: #4a90e2;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .rodape {
+      margin-top: 30px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 30px 22px;
+      }
+
+      .titulo h1 {
+        font-size: 28px;
+      }
+
+      .botoes {
+        flex-direction: column;
+      }
+
+      table {
+        min-width: 650px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="titulo">
+      <h1>👤 Sistema de Clientes</h1>
+      <p>Cadastro de usuários do Petshop</p>
+    </div>
+
+    <div class="formulario">
+
+      <form id="formCadastro">
+
+        <div class="grupo">
+          <label for="cadastro_nome">Nome completo</label>
+          <input
+            id="cadastro_nome"
+            type="text"
+            placeholder="Digite o nome completo"
+            required>
+        </div>
+
+        <div class="grupo">
+          <label for="cadastro_email">E-mail</label>
+          <input
+            id="cadastro_email"
+            type="email"
+            placeholder="Digite o e-mail"
+            required>
+        </div>
+
+        <div class="grupo">
+          <label for="cadastro_telefone">Telefone</label>
+          <input
+            id="cadastro_telefone"
+            type="text"
+            placeholder="(00) 00000-0000"
+            required>
+        </div>
+
+        <div class="grupo">
+          <label for="cadastro_senha">Senha</label>
+          <input
+            id="cadastro_senha"
+            type="password"
+            placeholder="Digite a senha"
+            required>
+        </div>
+
+        <div class="grupo">
+          <label for="cadastro_senha_confirm">Confirmar senha</label>
+          <input
+            id="cadastro_senha_confirm"
+            type="password"
+            placeholder="Confirme a senha"
+            required>
+        </div>
+
+        <div class="botoes">
+          <button class="btn-limpar" type="reset">
+            Limpar
+          </button>
+
+          <button class="btn-cadastrar" type="submit">
+            Cadastrar
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="secao-tabela">
+
+      <h2>📋 Usuários cadastrados</h2>
+
+      <div class="tabela-container">
+
+        <table id="tabelaUsuarios">
+
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+
+          <tr>
+            <td>Maria Silva</td>
+            <td>maria.silva@email.com</td>
+            <td>(11) 1234-5678</td>
+            <td class="acoes">Editar | Excluir</td>
+          </tr>
+
+          <tr>
+            <td>João Santos</td>
+            <td>joao.santos@email.com</td>
+            <td>(21) 9876-5432</td>
+            <td class="acoes">Editar | Excluir</td>
+          </tr>
+
+          <tr>
+            <td>Ana Oliveira</td>
+            <td>ana.oliveira@email.com</td>
+            <td>(31) 5555-1234</td>
+            <td class="acoes">Editar | Excluir</td>
+          </tr>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <div class="rodape">
+      © 2026 Pet Service • Sistema de gerenciamento
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
